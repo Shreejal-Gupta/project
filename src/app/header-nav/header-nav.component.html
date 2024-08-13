@@ -1,0 +1,51 @@
+<div class="main-head-container">
+    <img src="assets/logo.svg" alt="">
+    <div class="headers-info">
+        <div class="head-link-section">
+            <a href="#">why we are different</a>
+            <a href="#">Product</a>
+            <a href="#">Solution</a>
+            <a href="#">pricing</a>
+        </div>
+        <div class="head-side-tab">
+            <div>
+                <div class="d-flex" style="position: relative;">
+                    <svg class="search-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.5 21.5L16.4332 16.4332M16.4332 16.4332C17.2999 15.5665 17.9874 14.5375 18.4564 13.4051C18.9255 12.2727 19.1669 11.059 19.1669 9.83333C19.1669 8.60763 18.9255 7.39393 18.4564 6.26153C17.9874 5.12912 17.2999 4.1002 16.4332 3.2335C15.5665 2.36679 14.5375 1.67929 13.4051 1.21023C12.2727 0.741176 11.059 0.499756 9.83333 0.499756C8.60763 0.499756 7.39393 0.741176 6.26153 1.21023C5.12912 1.67929 4.1002 2.36679 3.2335 3.2335C1.48311 4.98388 0.499756 7.35791 0.499756 9.83333C0.499756 12.3087 1.48311 14.6828 3.2335 16.4332C4.98388 18.1835 7.35791 19.1669 9.83333 19.1669C12.3087 19.1669 14.6828 18.1835 16.4332 16.4332Z" stroke="#171C17" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    
+                    <input pInputText type="text" class="search-btn" (input)="handleSearch($event)"
+                        placeholder="Search keyword" style="width: 100%;" />
+                </div>
+            </div>
+            <div>
+                <a href="" class="sign-in">Sign in</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex search-icon-bar" style="position: relative;">
+        <svg class="search-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.5 21.5L16.4332 16.4332M16.4332 16.4332C17.2999 15.5665 17.9874 14.5375 18.4564 13.4051C18.9255 12.2727 19.1669 11.059 19.1669 9.83333C19.1669 8.60763 18.9255 7.39393 18.4564 6.26153C17.9874 5.12912 17.2999 4.1002 16.4332 3.2335C15.5665 2.36679 14.5375 1.67929 13.4051 1.21023C12.2727 0.741176 11.059 0.499756 9.83333 0.499756C8.60763 0.499756 7.39393 0.741176 6.26153 1.21023C5.12912 1.67929 4.1002 2.36679 3.2335 3.2335C1.48311 4.98388 0.499756 7.35791 0.499756 9.83333C0.499756 12.3087 1.48311 14.6828 3.2335 16.4332C4.98388 18.1835 7.35791 19.1669 9.83333 19.1669C12.3087 19.1669 14.6828 18.1835 16.4332 16.4332Z" stroke="#171C17" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        
+        <input pInputText type="text" class="search-btn" (input)="handleSearch($event)"
+            placeholder="Search keyword" style="width: 100%;" />
+    </div>
+    <div style="width: fit-content;" (click)="checkValue()">
+        <span class="material-symbols-outlined hamburger">
+            menu
+        </span>
+    </div>
+</div>
+<p-sidebar [(visible)]="headerVisible" position="right" (onHide)="headerVisible = false">
+    <div class="side-head-link-section">
+        <a href="#">why we are different</a>
+        <a href="#">Product</a>
+        <a href="#">Solution</a>
+        <a href="#">pricing</a>
+        
+        <div>
+            <a href="" class="sign-in">Sign in</a>
+        </div>
+    </div>
+</p-sidebar>
