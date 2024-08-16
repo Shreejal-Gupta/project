@@ -1,0 +1,93 @@
+.foot-section {
+    padding: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .left-foot-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        flex-wrap: wrap;
+        .m-foot-left {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            
+            .contact-info {
+                font-size: 18px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                color: #171C17;
+            }
+        }
+
+    }
+    .right-foot-section {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        .foot-mid {
+            display: flex;
+            gap: 20px;
+            > a {
+                color: #171C17;
+                text-decoration: none;
+                font-size: 18px;
+            }
+        } 
+
+        .right-top {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: wrap;
+            .foot-right {
+                display: flex;
+                gap: 10px;
+            }
+        }
+
+        .right-bottom {
+            width: 100%;
+            ::ng-deep .p-inputtext {
+                border-radius: 100px;
+                padding: 22px 207px 22px 30px;
+            }
+            .email-section {
+                position: relative;
+                width: 100%;
+            }
+            .subscribe-btn {
+                background-color: #19B30C; 
+                color: #fff;
+                border-radius: 100px;
+                padding: 12px 50px 12px 50px; 
+                border: unset; 
+                font-size: 24px;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translatey(-50%);
+            }
+        }
+    }
+
+.foot-downward-section {
+    color: #171C17;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 107px;
+}
+}

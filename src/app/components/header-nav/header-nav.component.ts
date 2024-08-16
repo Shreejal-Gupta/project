@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { SharedModule } from 'primeng/api';
-import { PrimeNgModule } from '../shared/prime-ng.module';
 
 @Component({
   selector: 'app-header-nav',

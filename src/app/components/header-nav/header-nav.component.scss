@@ -1,7 +1,7 @@
 .main-head-container {
     padding: 20px 30px;
     display: flex;
-    gap: 10px;
+    gap: 50px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -10,16 +10,16 @@
         flex: 1;
         font-weight: 500;
         justify-content: space-between;
-        gap: 60px;
+        gap: 20px;
         flex-wrap: wrap;
         align-items: center;
         .head-link-section {
             display: flex;
-            gap: 30px;
+            gap: 51px;
             flex-wrap: wrap;
             > a {
                 text-decoration: none;
-                font-size: 24px;
+                font-size: 18px;
                 color: #272f27; 
             }
         }
@@ -28,9 +28,13 @@
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+        align-items: center;
     }
 }
 
+@media screen {
+    
+}
 :host .search-btn {
     padding: 10px 10px 10px 50px !important;
     border: unset !important;
@@ -42,7 +46,7 @@
     padding: 10px 25px;
     border-radius: 25px;    
     font-weight: 500;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 .search-icon {
@@ -76,17 +80,18 @@
     flex-wrap: wrap;
     > a {
         text-decoration: none;
-        font-size: 24px;
+        font-size: 18px;
         color: #272f27; 
     }
 }
 
-@media screen and (max-width: 1270px) {
+@media screen and (max-width: 1418px) {
     .main-head-container {
         flex-direction: column !important;
         justify-content: start !important;
         align-items: start !important;
         width: 100% !important;
+        gap: 20px !important;
     }
 }
 
