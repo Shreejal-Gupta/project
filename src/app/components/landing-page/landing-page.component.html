@@ -1,5 +1,4 @@
 <app-header-nav></app-header-nav>
-
 <div class="landing-first-section">
     <div style="color: #FFC222;">ON STOP SOLUTION</div>
     <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -15,15 +14,15 @@
         ">Explore</button>
     </div>
 </div>
-<div class="decision-diagram">
+<div class="decision-diagram" style="position: relative;">
+    <svg id="svg-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></svg>
     <div class="outer-card" id="left-first-div" style="position: relative">
         <div class="decision-card">
            <span>Job Seeker</span> 
            <img src="assets/jobseeker.png" alt="">
         </div>
         <img src="assets/sm-icon.png" alt="">
-
-        <!-- <div class="point" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); height: 10px; width: 10px; background: red; border-radius: 50%;"></div> -->
+       
     </div>
     <div class="outer-card" id="left-second-div">
         <div class="decision-card">
@@ -156,22 +155,5 @@
 <div style="margin-top: 30px;">
     <app-footer-land></app-footer-land>
 </div>
-<style>
-    #left-first-div {
-        position: relative;
-    }
-</style>
 
-<script>
-    let elem = document.querySelector("#left-first-div");
-    let rect = elem.getBoundingClientRect();
-    console.log({rect})
-    alert('nepal');
-    // let circle = document.createElement("div");
-    // circle.innerHTML = "x";
-    // circle.style = `
-    // position: absolute;
-    // left: rect
-    // `;
 
-</script>
