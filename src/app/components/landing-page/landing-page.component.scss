@@ -163,13 +163,22 @@ width: 49%;
     background-color: #E0EDE6;
     padding: 83px;
     display: flex;
-    flex-direction: column;
-    gap: 60px;
-    .outer-card {
+    gap: 50px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .left-decision-diagram,.right-decision-diagram {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;  
+    }
+    .outer-card{
         padding-bottom: 31px;
         position: relative;
-        border: 1px solid red;
-        width: fit-content;
+        // border: 1px solid red;
+        width: 222.4px;
+        // position: absolute;
+        // top: 50px;
+        // left: 100px;
         >img {
             width: 32px;
             height: 30px;
@@ -194,3 +203,5 @@ width: 49%;
         }
     }
 }
+
+

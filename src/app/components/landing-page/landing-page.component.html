@@ -15,38 +15,58 @@
     </div>
 </div>
 <div class="decision-diagram" style="position: relative;">
-    <svg id="svg-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></svg>
-    <div class="outer-card" id="left-first-div" style="position: relative">
-        <div class="decision-card">
-           <span>Job Seeker</span> 
-           <img src="assets/jobseeker.png" alt="">
+    <div class="left-decision-diagram">
+        <ng-container *ngFor="let leftDecision of leftDecisionList">
+            <div class="outer-card" [id]="leftDecision.id">
+                <div class="decision-card">
+                   <span>{{leftDecision.title}}</span> 
+                   <img [src]="leftDecision.image" alt="">
+                </div>
+                <img src="assets/sm-icon.png" alt="">
+            </div>
+        </ng-container>
+        
+        <div style="width: 222.4px;display: flex;justify-content: center;" id="left-fifth-div">
+            <img src="assets/interviews.png" alt="" style="width: 122px;height: 126px;">
         </div>
-        <img src="assets/sm-icon.png" alt="">
-       
     </div>
-    <div class="outer-card" id="left-second-div">
-        <div class="decision-card">
-            <span>Candidate</span> 
-            <img src="assets/candidate.png" alt="">
-        </div>
-        <img src="assets/sm-icon.png" alt="">
-    </div>
-    <div class="outer-card">
-        <div class="decision-card">
-            <span>Matching JD</span> 
-            <img src="assets/matching-jd.png" alt="">
-        </div>
-        <img src="assets/sm-icon.png" alt="">
-    </div>
-    <div class="outer-card">
-        <div class="decision-card">
-            <span>Interviews</span> 
-            <img src="assets/interviews.png" alt="">
-        </div>
-        <img src="assets/sm-icon.png" alt="">
-    </div>
+ 
     
-    <img src="assets/interviews.png" alt="" style="width: 122px;height: 126px;">
+    <div class="right-decision-diagram">
+        <ng-container *ngFor="let rightDecision of rightDecisionList">
+            @if(!!rightDecision?.child)
+            {
+                <div style="display: flex;flex-direction: row;gap: 40px;flex-wrap: wrap;">
+                    <ng-container *ngFor="let righttree of rightDecision?.child">
+                        <div class="outer-card" [id]="righttree.id" style="max-width: 400px; height: fit-content;" [ngStyle]="{padding:!!righttree?.notSmallLogo?'0px ':'31px !important'}">
+                            <div class="decision-card" [ngStyle]="!!righttree?.notSmallLogo?{padding: '5px 4.8px 15.5px 8.2px','min-height': '136.969px','justify-content':'space-between'}:{}" >
+                               <span>{{righttree.title}}</span> 
+                               <img [src]="righttree.image" alt="" *ngIf="!!righttree?.image">
+                               <svg width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg" *ngIf="!!righttree?.showArrow">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M-0.00134087 6.75095C-0.00134087 6.94986 0.0776768 7.14063 0.218328 7.28128C0.358982 7.42193 0.549747 7.50095 0.748659 7.50095L18.4382 7.50095L13.7177 12.2199C13.5768 12.3608 13.4977 12.5518 13.4977 12.7509C13.4977 12.9501 13.5768 13.1411 13.7177 13.2819C13.8585 13.4228 14.0495 13.5019 14.2487 13.5019C14.4478 13.5019 14.6388 13.4228 14.7797 13.2819L20.7797 7.28195C20.8495 7.21228 20.9049 7.12951 20.9427 7.0384C20.9805 6.94728 21 6.8496 21 6.75095C21 6.6523 20.9805 6.55462 20.9427 6.4635C20.9049 6.37238 20.8495 6.28962 20.7797 6.21995L14.7797 0.219947C14.7099 0.150215 14.6271 0.0949012 14.536 0.0571625C14.4449 0.0194239 14.3473 0 14.2487 0C14.0495 0 13.8585 0.0791173 13.7177 0.219947C13.5768 0.360777 13.4977 0.551784 13.4977 0.750947C13.4977 0.950111 13.5768 1.14112 13.7177 1.28195L18.4382 6.00095L0.748659 6.00095C0.549747 6.00095 0.358982 6.07997 0.218328 6.22062C0.0776768 6.36127 -0.00134087 6.55203 -0.00134087 6.75095Z" fill="#19B30C"/>
+                                </svg>
+                            </div> 
+                            <img src="assets/sm-icon.png" alt="" *ngIf="!righttree?.notSmallLogo">  
+                        </div>
+                    </ng-container>
+                </div>
+            }
+            @else {
+                <div class="outer-card" [id]="rightDecision.id" >
+                    <div class="decision-card">
+                       <span>{{rightDecision.title}}</span> 
+                       <img [src]="rightDecision.image" alt="">
+                    </div>
+                    <img src="assets/sm-icon.png" alt="">
+                   
+                </div>
+            }
+        </ng-container>
+        
+        <div style="width: 222.4px;display: flex;justify-content: center;" id="right-fifth-div">
+            <img src="assets/interviews.png" alt="" style="width: 122px;height: 126px;">
+        </div>
+    </div>
 </div>
 
 <div class="product-of-hiper">
@@ -156,4 +176,10 @@
     <app-footer-land></app-footer-land>
 </div>
 
-
+<ng-template #decisionCard>
+    <div class="decision-card">
+        <span>Job Seeker</span> 
+        <img src="assets/jobseeker.png" alt="">
+     </div>
+     <img src="assets/sm-icon.png" alt="">
+</ng-template>
